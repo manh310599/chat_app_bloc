@@ -7,54 +7,51 @@ abstract class Register_Error extends RegisterState {}
 class Register_Initial_State extends RegisterState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }
 
-class Register_CheckOTP_State extends RegisterState {
-  String verificationId;
-  String phone;
-  String name;
-  String pass;
-
-  Register_CheckOTP_State({
-    required this.verificationId,
-    required this.phone,
-    required this.name,
-    required this.pass,
-  });
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [verificationId,phone,name,pass];
-}
-
-class Register_Success extends RegisterState {
+class Unknow extends Register_Error{
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
+
 }
 
-class Register_PhoneExisted_State extends Register_Error {
+class Register_FieldlNull extends Register_Error{
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
+
+class Register_InvaidEmail extends Register_Error{
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
-}
 
-class Register_ConfirmPassDontSame_State extends Register_Error {
+}
+class Register_ConfirmPass_Wrong extends Register_Error{
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
-}
 
-class Register_InvalidPhoneNumber_State extends Register_Error {
+}
+class Register_ConfirmPass_ToShort extends Register_Error{
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
+
 }
 
-class Register_CheckOtpFailed_State extends Register_Error {
+class Register_Email_Invaid extends Register_Error{
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
+
 }
 
+class Resgister_Success extends RegisterState{
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+
+}
